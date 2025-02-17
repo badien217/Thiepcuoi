@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wedding-container {
+    background-color: #fff5f5;
+    overflow: hidden;
+}
+
+/* Header Section */
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('/images/header-bg.jpg') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+}
+
+.invitation-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6em;
+    margin-bottom: 50px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+    color: #fff;
+    opacity: 0;
+}
+
+.couple-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 5em;
+    margin: 30px 0 50px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+}
+
+/* Countdown Section */
+.countdown {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+}
+
+.countdown-number {
+    font-size: 3.5em;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.countdown-label {
+    font-size: 1.2em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+/* Thêm keyframes cho hiệu ứng floating */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes floating-delayed {
+    0% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Thêm class mới cho animation floating */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+.floating-delayed {
+    animation: floating-delayed 3s ease-in-out infinite;
+}
+
+/* Điều chỉnh delay cho từng box */
+.countdown-box:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.countdown-box:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.countdown-box:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.countdown-box:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+/* Couple Information Section */
+.couple-section {
+    padding: 100px 0;
+}
+
+.couple-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.couple-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.groom-info {
+    flex-direction: row;
+}
+
+.bride-info {
+    flex-direction: row-reverse;
+}
+
+.couple-photo {
+    flex: 1;
+    padding: 20px;
+}
+
+.couple-photo img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.couple-photo img:hover {
+    transform: scale(1.05);
+}
+
+.couple-details {
+    flex: 1;
+    padding: 40px;
+}
+
+.couple-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.family-info {
+    margin: 20px 0;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Location Section */
+.location-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: white;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.map-frame {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    border: none;
+}
+
+.location-details {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Photo Album Section */
+.photo-album {
+    padding: 100px 0;
+    background: #fff5f5;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease;
+}
+
+.scale-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 1s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .invitation-title {
+        font-size: 4em;
+    }
+
+    .couple-names {
+        font-size: 3em;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .countdown-box {
+        min-width: 120px;
+        padding: 20px;
+    }
+
+    .countdown-number {
+        font-size: 2.5em;
+    }
+
+    .countdown-label {
+        font-size: 1em;
+    }
+
+    .couple-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .couple-photo img {
+        max-width: 300px;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-box {
+        min-width: 100px;
+        padding: 15px;
+    }
+
+    .countdown-number {
+        font-size: 2em;
+    }
+}
